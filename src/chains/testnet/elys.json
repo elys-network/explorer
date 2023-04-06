@@ -4,7 +4,7 @@
     "https://api.testnet.elys.network"
   ],
   "rpc": [
-    "http://37.187.154.66:26657",
+    "https://rpc.testnet.elys.network",
     "http://198.27.74.140:26657",
     "http://91.183.62.162:26657",
     "http://213.135.246.90:26657"
