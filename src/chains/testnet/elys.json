@@ -1,7 +1,7 @@
 {
   "chain_name": "elys",
   "api": [
-    "http://37.187.154.66:1317"
+    "https://api.testnet.elys.network"
   ],
   "rpc": [
     "http://37.187.154.66:26657",
