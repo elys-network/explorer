@@ -79,11 +79,14 @@ export default {
   },
   setup(props) {
     const {
-      isOpen,
+      // isOpen,
       isActive,
       updateGroupOpen,
       updateIsActive,
     } = useVerticalNavMenuGroup(props.item)
+
+    // FIXME: unfold sidebar menu by default
+    const isOpen = true
 
     const { t } = useI18nUtils()
     const { canViewVerticalNavMenuGroup } = useAclUtils()
