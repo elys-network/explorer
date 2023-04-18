@@ -75,7 +75,7 @@
             </b-tr>
           </tbody>
         </b-table-simple>
-        <b-table-simple v-if="proposal.type.indexOf('SoftwareUpgrade') > 0">
+        <b-table-simple v-if="this.proposal.type.indexOf('SoftwareUpgrade') > 0">
           <b-tr>
             <b-td class="text-center">
               {{ $t('governanceProposal.upgrade_time') }} {{ upgradeTime }}
@@ -375,14 +375,14 @@ export default {
   computed: {
     upgradeTime() {
       if (this.proposal.type.indexOf('SoftwareUpgrade') > 0) {
-        if (Number(this.proposal?.contents.plan.height || 0) > 0 && this.latest?.block) {
+        if (Number(this.proposal?.height || 0) > 0 && this.latest?.block) {
           const blocks = Number(this.proposal.contents.plan.height) - Number(this.latest.block?.header?.height || 0)
           if (blocks > 0) {
             const endtime = dayjs().add(blocks * this.blocktime, 'second').format('YYYY-MM-DD HH:mm:ss')
             return endtime
           }
         }
-        return dayjs(this.proposal.contents.plan.time).format('YYYY-MM-DD HH:mm:ss')
+        return dayjs(this.proposal.contents.content.plan.time).format('YYYY-MM-DD HH:mm:ss')
       }
       return '0001-01-01 00:00:00'
     },
@@ -408,6 +408,7 @@ export default {
         })
       }
       this.proposal = p
+      this.proposal.type = p.contents.content['@type']
     })
 
     if (!getCachedValidators()) {
