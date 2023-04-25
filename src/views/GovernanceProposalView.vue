@@ -319,7 +319,7 @@ export default {
   },
   data() {
     return {
-      blocktime: 2,
+      blocktime: 6,
       tallyParam: null,
       latest: {},
       next: null,
@@ -375,8 +375,8 @@ export default {
   computed: {
     upgradeTime() {
       if (this.proposal.type.indexOf('SoftwareUpgrade') > 0) {
-        if (Number(this.proposal?.height || 0) > 0 && this.latest?.block) {
-          const blocks = Number(this.proposal.contents.plan.height) - Number(this.latest.block?.header?.height || 0)
+        if (Number(this.proposal?.contents.content.plan.height || 0) > 0 && this.latest?.block) {
+          const blocks = Number(this.proposal.contents.content.plan.height) - Number(this.latest.block?.header?.height || 0)
           if (blocks > 0) {
             const endtime = dayjs().add(blocks * this.blocktime, 'second').format('YYYY-MM-DD HH:mm:ss')
             return endtime

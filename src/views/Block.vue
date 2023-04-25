@@ -141,7 +141,7 @@ export default {
       block: { block: { header: {}, data: {}, evidence: {} } },
       txs: null,
       height: 0,
-      blocktime: 2,
+      blocktime: 6,
       latest: {},
       currentBlock: 0,
       remainingBlocks: 0,
