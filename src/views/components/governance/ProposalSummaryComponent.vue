@@ -9,7 +9,7 @@
         pill
         variant="light-primary"
       >
-        {{ formatType(p.contents['@type']) }}
+        {{ formatType(p.contents['content']['@type']) }}
       </b-badge>
       <router-link
         :to="`./gov/${p.id}`"
@@ -231,6 +231,7 @@ export default {
       this.$parent.selectedTitle = title
     },
     formatType(v) {
+      console.log(this.p)
       const txt = String(v).replace('Proposal', '')
       const index = txt.lastIndexOf('.')
       return index > 0 ? txt.substring(index + 1) : txt

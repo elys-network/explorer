@@ -52,7 +52,7 @@ export default {
         }
       })
       const current = {
-        title: selected.chain_name,
+        title: `${selected.chain_name} Network`,
         icon: selected.logo,
         route: { name: selected.chain_name, params: { chain: selected.chain_name } },
       }
