@@ -231,7 +231,6 @@ export default {
       this.$parent.selectedTitle = title
     },
     formatType(v) {
-      console.log(this.p)
       const txt = String(v).replace('Proposal', '')
       const index = txt.lastIndexOf('.')
       return index > 0 ? txt.substring(index + 1) : txt
