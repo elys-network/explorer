@@ -79,7 +79,7 @@ export default {
       next: '',
       totalPower: 0,
       tallyParam: null,
-      type: '2',
+      type: '3',
       types: {
         2: 'Voting',
         3: 'Passed',
@@ -106,6 +106,7 @@ export default {
       this.$http.getGovernanceListByStatus(this.type).then(res => {
         this.proposals = this.proposals.concat(res.proposals)
         this.updateTally(this.proposals)
+        this.proposals.reverse()
         this.next = res.pagination.next_key
         this.loading = false
       })
