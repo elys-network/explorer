@@ -133,11 +133,11 @@
                   <b-form-select-option value="6000">
                     6s
                   </b-form-select-option>
+                  <b-form-select-option value="5000">
+                    5s
+                  </b-form-select-option>
                   <b-form-select-option value="2000">
                     2s
-                  </b-form-select-option>
-                  <b-form-select-option value="1000">
-                    1s
                   </b-form-select-option>
                 </b-form-select>
               </b-input-group>
