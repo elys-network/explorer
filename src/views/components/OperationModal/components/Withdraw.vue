@@ -49,14 +49,11 @@ export default {
   computed: {
     msg() {
       const txMsgs = []
-      this.delegations.forEach(i => {
-        txMsgs.push({
-          typeUrl: '/cosmos.distribution.v1beta1.MsgWithdrawDelegatorReward',
-          value: {
-            delegatorAddress: this.address,
-            validatorAddress: i.delegation.validator_address,
-          },
-        })
+      txMsgs.push({
+        typeUrl: '/elysnetwork.elys.incentive.MsgWithdrawRewards',
+        value: {
+          delegatorAddress: this.address,
+        },
       })
       return txMsgs
     },
