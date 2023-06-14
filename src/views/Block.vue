@@ -6,11 +6,8 @@
           <flip-countdown :deadline="upgradeTime"  />
           <b-input-group prepend="Estimated by block time: ">
             <b-form-select v-model="blocktime">
-              <b-form-select-option value="6">
-                6s
-              </b-form-select-option>
-              <b-form-select-option value="5">
-                5s
+              <b-form-select-option value="4">
+                4s
               </b-form-select-option>
               <b-form-select-option value="2">
                 2s
