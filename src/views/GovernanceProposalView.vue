@@ -313,7 +313,7 @@ export default {
   },
   data() {
     return {
-      blocktime: 6,
+      blocktime: 4,
       tallyParam: null,
       latest: {},
       next: null,
